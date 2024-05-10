@@ -1,0 +1,276 @@
+{
+  "module": "TestInline",
+  "classes": [
+    {
+      "statement": "define-class",
+      "clazz": {
+        "type": "asaka-class",
+        "modifiers": [],
+        "name": "InlineClazz",
+        "fields": [],
+        "methods": [
+          {
+            "type": "method",
+            "name": "test",
+            "flags": [
+              "static",
+              "inline"
+            ],
+            "returnType": "void",
+            "generics": [],
+            "parameters": [],
+            "body": {
+              "method": "test",
+              "context": {
+                "x$0": {
+                  "type": "int",
+                  "name": "x$0",
+                  "mutable": false,
+                  "inline": false
+                },
+                "y$0": {
+                  "type": "int",
+                  "name": "y$0",
+                  "mutable": false,
+                  "inline": false
+                },
+                "z$0": {
+                  "type": "int",
+                  "name": "z$0",
+                  "mutable": false,
+                  "inline": false
+                }
+              },
+              "nodes": [
+                {
+                  "statement": "define-var",
+                  "name": "x$0",
+                  "value": "undefined",
+                  "mutable": false,
+                  "type": "int"
+                },
+                {
+                  "statement": "if",
+                  "condition": {
+                    "expression": "literal",
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "then": {
+                    "method": "$block$test$0",
+                    "context": {},
+                    "nodes": [
+                      {
+                        "expression": "binary",
+                        "left": {
+                          "expression": "var-call",
+                          "name": "x$0",
+                          "type": "int"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "expression": "literal",
+                          "type": "int",
+                          "value": "1"
+                        },
+                        "type": "Undefined"
+                      }
+                    ]
+                  },
+                  "else": {
+                    "method": "$block$test$1",
+                    "context": {},
+                    "nodes": [
+                      {
+                        "expression": "binary",
+                        "left": {
+                          "expression": "var-call",
+                          "name": "x$0",
+                          "type": "int"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "expression": "literal",
+                          "type": "int",
+                          "value": "2"
+                        },
+                        "type": "Undefined"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "statement": "define-var",
+                  "name": "y$0",
+                  "value": "undefined",
+                  "mutable": false,
+                  "type": "int"
+                },
+                {
+                  "statement": "try-catch",
+                  "try": {
+                    "method": "$block$test$2",
+                    "context": {},
+                    "nodes": [
+                      {
+                        "expression": "binary",
+                        "left": {
+                          "expression": "var-call",
+                          "name": "y$0",
+                          "type": "int"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "expression": "literal",
+                          "type": "int",
+                          "value": "1"
+                        },
+                        "type": "Undefined"
+                      }
+                    ]
+                  },
+                  "catch": [
+                    {
+                      "first": "java.lang.Exception",
+                      "second": {
+                        "method": "$block$test$3",
+                        "context": {},
+                        "nodes": [
+                          {
+                            "expression": "binary",
+                            "left": {
+                              "expression": "var-call",
+                              "name": "y$0",
+                              "type": "int"
+                            },
+                            "operator": "=",
+                            "right": {
+                              "expression": "literal",
+                              "type": "int",
+                              "value": "2"
+                            },
+                            "type": "Undefined"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "finally": "empty"
+                },
+                {
+                  "statement": "define-var",
+                  "name": "z$0",
+                  "value": "undefined",
+                  "mutable": false,
+                  "type": "int"
+                },
+                {
+                  "statement": "when",
+                  "target": "empty",
+                  "cases": [
+                    {
+                      "first": {
+                        "expression": "literal",
+                        "type": "boolean",
+                        "value": "false"
+                      },
+                      "second": {
+                        "method": "$block$test$5",
+                        "context": {},
+                        "nodes": [
+                          {
+                            "expression": "binary",
+                            "left": {
+                              "expression": "var-call",
+                              "name": "z$0",
+                              "type": "int"
+                            },
+                            "operator": "=",
+                            "right": {
+                              "expression": "literal",
+                              "type": "int",
+                              "value": "4"
+                            },
+                            "type": "Undefined"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "otherwise": {
+                    "method": "$block$test$6",
+                    "context": {},
+                    "nodes": [
+                      {
+                        "expression": "literal",
+                        "type": "int",
+                        "value": "5"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "method",
+            "name": "testInline",
+            "flags": [],
+            "returnType": "void",
+            "generics": [],
+            "parameters": [],
+            "body": {
+              "method": "testInline",
+              "context": {},
+              "nodes": [
+                {
+                  "expression": "invoke",
+                  "self": {
+                    "expression": "class-call",
+                    "type": "InlineClazz"
+                  },
+                  "name": "test",
+                  "generics": [],
+                  "args": {},
+                  "type": "void",
+                  "null-safety": false
+                }
+              ]
+            }
+          },
+          {
+            "type": "method",
+            "name": "<clinit>",
+            "flags": [
+              "static",
+              "final"
+            ],
+            "returnType": "void",
+            "generics": [],
+            "parameters": [],
+            "body": {
+              "method": "<clinit>",
+              "context": {},
+              "nodes": []
+            }
+          },
+          {
+            "type": "method",
+            "name": "<init>",
+            "flags": [
+              "public"
+            ],
+            "returnType": "InlineClazz",
+            "generics": [],
+            "parameters": [],
+            "body": {
+              "method": "<init>",
+              "context": {},
+              "nodes": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
